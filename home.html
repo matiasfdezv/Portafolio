@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matías Fernández | Portafolio</title>
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-50 font-mono antialiased selection:bg-lime-400 selection:text-black">
+
+    <!-- LÍNEA DE ESTADO TIPO TERMINAL -->
+    <div class="bg-zinc-900 text-zinc-400 text-xs px-4 py-2 border-b border-zinc-800 flex justify-between items-center">
+        <span>STATUS: OPEN FOR OFFERS // LOCATION: SANTIAGO, CL</span>
+        <span class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span> SYSTEM ONLINE
+        </span>
+    </div>
+
+    <!-- 1. HERO SECTION RADICAL -->
+    <header class="max-w-5xl mx-auto px-6 pt-24 pb-16 relative">
+        <div class="absolute top-10 right-10 text-zinc-900 font-extrabold text-8xl select-none pointer-events-none tracking-tighter">
+            010101
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-start gap-8 relative z-10">
+            <!-- Foto de perfil con marco brutalista -->
+            <div class="relative group">
+                <div class="absolute inset-0 bg-lime-400 rounded-2xl translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
+                <img src="foto.png" alt="Matías Fernández" class="w-36 h-36 rounded-2xl object-cover border-2 border-zinc-50 relative z-10 filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300">
+            </div>
+
+            <div class="flex-1">
+                <span class="text-lime-400 font-bold tracking-widest text-xs uppercase bg-lime-950/50 px-2 py-1 rounded border border-lime-800/30">
+                    &gt;_ INGENIERO EN INFORMÁTICA
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-3 uppercase">
+                    Matías Fernández <span class="text-transparent bg-clip-text bg-gradient-to-r align-middle from-lime-400 to-emerald-400">Valdés</span>
+                </h1>
+                <p class="text-zinc-400 text-lg max-w-2xl mt-4 font-sans leading-relaxed">
+                    Especializado en <strong class="text-zinc-200">Back-End & Data Science</strong>[cite: 1]. Con un enfoque implacable en la lógica pura, la arquitectura de software avanzada y el modelamiento conceptual de datos[cite: 1].
+                </p>
+                
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#proyectos" class="bg-white text-black px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-lime-400 transition-colors duration-200 shadow-[4px_4px_0px_0px_rgba(163,230,53,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                        [ Ver Proyectos ]
+                    </a>
+                    <a href="#contacto" class="border border-zinc-700 text-zinc-300 px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-zinc-900 transition-colors">
+                        Contacto.log()
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. GRID DE PROYECTOS (ESTILO TARJETAS CYBERPUNK) -->
+    <main id="proyectos" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900">
+        <div class="flex justify-between items-center mb-12">
+            <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase">// PROYECTOS_DESTACADOS</h2>
+            <span class="text-xs text-zinc-600 hidden md:inline">SELECT * FROM REPOS</span>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Proyecto de Tesis: SubwayGO -->
+            <div class="bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-lime-400 tracking-widest uppercase">TESIS DESPLEGADA</span>
+                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">SCORE: 6.4</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors">SubwayGO Santiago</h3>
+                    <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
+                        Optimización, planificación y modelamiento de datos críticos aplicados al transporte de Santiago[cite: 1]. Diseñado bajo patrones de arquitectura de software robustos[cite: 1].
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DATA MODELING</span>
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">ARCHITECTURE</span>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-zinc-800/60">
+                    <a href="#" target="_blank" class="text-white hover:text-lime-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
+                        READ_CASE_STUDY() <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 (Customizable para Django/Firebase) -->
+            <div class="bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-violet-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-violet-400/5 blur-2xl rounded-full"></div>
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-violet-400 tracking-widest uppercase">BACK-END APP</span>
+                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">v1.0.0</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-white group-hover:text-violet-400 transition-colors">Custom Core System</h3>
+                    <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
+                        Arquitectura backend integrada para la gestión de datos persistentes y servicios en tiempo real. Alta concurrencia y optimización lógica de consultas.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DJANGO</span>
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">FIREBASE</span>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-zinc-800/60">
+                    <a href="#" target="_blank" class="text-white hover:text-violet-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
+                        EXPLORE_CODE() <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 3. HABILIDADES: CORE STACK (VISUAL Y RADICAL) -->
+    <section class="bg-zinc-900/20 border-t border-b border-zinc-900 py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase mb-12">// CORE_STACK</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950">
+                    <div class="w-8 h-8 rounded bg-lime-950 border border-lime-800 text-lime-400 font-bold text-center leading-7 mb-4 text-xs">LN</div>
+                    <h3 class="text-lg font-bold text-white mb-4">Lenguajes</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Python</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Java</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">C++</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950">
+                    <div class="w-8 h-8 rounded bg-violet-950 border border-violet-800 text-violet-400 font-bold text-center leading-7 mb-4 text-xs">DT</div>
+                    <h3 class="text-lg font-bold text-white mb-4">Datos & BI</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Modelamiento Lógico</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Diseño Conceptual</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Business Intelligence</span>
+                    </div>
+                </div>
+
+                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950">
+                    <div class="w-8 h-8 rounded bg-emerald-950 border border-emerald-800 text-emerald-400 font-bold text-center leading-7 mb-4 text-xs">EN</div>
+                    <h3 class="text-lg font-bold text-white mb-4">Ingeniería</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Arquitectura Software</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Análisis Requerimientos</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Calidad & QA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LOG DE EXPERIENCIA -->
+    <section class="max-w-5xl mx-auto px-6 py-20">
+        <h2 class="text-2xl font-black tracking-wider text-zinc-500 uppercase mb-12">// EXP_LOG</h2>
+        <div class="relative border-l-2 border-zinc-800 pl-6 ml-2">
+            <div class="relative">
+                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-lime-400"></div>
+                <span class="text-xs text-zinc-500 font-bold">AGOSTO 2025 - OCTUBRE 2025</span>
+                <h3 class="text-xl font-bold text-white mt-1">Soporte TI & Administración de Sistemas Clínicos</h3>
+                <h4 class="text-sm font-bold text-lime-400 uppercase mt-0.5">Hospital Naval Almirante Nef[cite: 1]</h4>
+                <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed max-w-2xl">
+                    Gestión crítica de infraestructura de red, mantenimiento avanzado de servidores e implementación de soporte técnico directo para sistemas de salud pública[cite: 1].
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FOOTER / TERMINAL INVITATION -->
+    <footer id="contacto" class="border-t border-zinc-900 bg-black/60 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto px-6 py-16 md:flex md:items-center md:justify-between">
+            <div>
+                <h2 class="text-3xl font-black text-white uppercase tracking-tight">EXECUTE_CONNECTION</h2>
+                <p class="text-xs text-zinc-500 mt-2 font-mono">Providencia, Santiago, Chile[cite: 1]. Disponible para proyectos globales.</p>
+            </div>
+            <div class="mt-8 md:mt-0 flex flex-wrap gap-4 items-center">
+                <a href="mailto:m.fdez.valdes@gmail.com" class="bg-lime-400 text-black px-4 py-2 text-xs font-black uppercase rounded hover:bg-white transition-colors">
+                    m.fdez.valdes@gmail.com
+                </a>
+                <div class="flex gap-4 text-xs font-bold text-zinc-400">
+                    <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="hover:text-white">[ LINKEDIN ]</a>
+                    <a href="https://github.com/tu-usuario" target="_blank" class="hover:text-white">[ GITHUB ]</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-6 border-t border-zinc-900 text-[10px] text-zinc-600">
+            RUNNING ON TAILWIND v4 // RUN: CC_MFV_2026
+        </div>
+    </footer>
+
+</body>
+</html>
