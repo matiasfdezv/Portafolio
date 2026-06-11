@@ -4,48 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matías Fernández | Portafolio</title>
-    <!-- Tailwind CSS v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        /* Cursor parpadeante para el efecto typewriter */
+        .typewriter-cursor::after {
+            content: '_';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Contenedor del fondo interactivo */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
 </head>
-<body class="bg-zinc-950 text-zinc-50 font-mono antialiased selection:bg-lime-400 selection:text-black">
+<body class="bg-zinc-950 text-zinc-50 font-mono antialiased selection:bg-lime-400 selection:text-black transition-colors duration-300">
 
-    <!-- LÍNEA DE ESTADO TIPO TERMINAL -->
-    <div class="bg-zinc-900 text-zinc-400 text-xs px-4 py-2 border-b border-zinc-800 flex justify-between items-center">
-        <span>STATUS: OPEN FOR OFFERS // LOCATION: SANTIAGO, CL</span>
-        <span class="flex items-center gap-2">
+    <!-- BOTÓN FLOTANTE DE WHATSAPP BRUTALISTA -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/56952521925?text=Hola%20Mat%C3%ADas,%20vi%20tu%20portafolio%20y%20me%20interesa%20tu%20perfil." 
+           target="_blank" 
+           class="block bg-zinc-900 border-2 border-lime-400 text-lime-400 font-mono text-xs font-black uppercase px-4 py-3 rounded-lg shadow-[4px_4px_0px_0px_rgba(163,230,53,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all btn-whatsapp">
+            [ PING: +56952521925 ]
+        </a>
+    </div>
+
+    <div class="fixed top-14 right-4 z-50">
+        <button id="theme-toggle" class="bg-zinc-900 border border-zinc-700 text-zinc-400 text-xs px-3 py-1.5 rounded-md font-bold uppercase hover:border-lime-400 hover:text-white transition-all shadow-md cursor-pointer">
+            [ MODE: DEFAULT ]
+        </button>
+    </div>
+
+    <div class="bg-zinc-900 text-zinc-400 text-xs px-4 py-2 border-b border-zinc-800 flex justify-between items-center relative z-20">
+        <span class="tracking-tight overflow-hidden text-ellipsis whitespace-nowrap">STATUS: OPEN FOR OFFERS // LOCATION: SANTIAGO, CL</span>
+        <span class="flex items-center gap-2 shrink-0">
             <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span> SYSTEM ONLINE
         </span>
     </div>
 
-    <!-- 1. HERO SECTION RADICAL -->
-    <header class="max-w-5xl mx-auto px-6 pt-24 pb-16 relative">
-        <div class="absolute top-10 right-10 text-zinc-900 font-extrabold text-8xl select-none pointer-events-none tracking-tighter">
+    <header class="max-w-5xl mx-auto px-6 pt-20 pb-16 relative min-h-[60vh] flex items-center">
+        <div id="particles-js"></div>
+        
+        <div class="absolute top-10 right-10 text-zinc-900 font-extrabold text-7xl md:text-8xl select-none pointer-events-none tracking-tighter z-0">
             010101
         </div>
         
-        <div class="flex flex-col md:flex-row items-start gap-8 relative z-10">
-            <!-- Foto de perfil con marco brutalista -->
-            <div class="relative group">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10 w-full text-center md:text-left">
+            <div class="relative group shrink-0 mx-auto md:mx-0">
                 <div class="absolute inset-0 bg-lime-400 rounded-2xl translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
                 <img src="foto.png" alt="Matías Fernández" class="w-36 h-36 rounded-2xl object-cover border-2 border-zinc-50 relative z-10 filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300">
             </div>
 
-            <div class="flex-1">
-                <span class="text-lime-400 font-bold tracking-widest text-xs uppercase bg-lime-950/50 px-2 py-1 rounded border border-lime-800/30">
+            <div class="flex-1 w-full">
+                <span class="inline-block text-lime-400 font-bold tracking-widest text-xs uppercase bg-lime-950/50 px-2 py-1 rounded border border-lime-800/30 dynamic-tag">
                     &gt;_ INGENIERO EN INFORMÁTICA
                 </span>
-                <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mt-3 uppercase">
-                    Matías Fernández <span class="text-transparent bg-clip-text bg-gradient-to-r align-middle from-lime-400 to-emerald-400">Valdés</span>
+                <h1 class="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-white mt-3 uppercase break-words">
+                    Matías Fernández <span class="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400 dynamic-gradient">Valdés</span>
                 </h1>
-                <p class="text-zinc-400 text-lg max-w-2xl mt-4 font-sans leading-relaxed">
-                    Especializado en <strong class="text-zinc-200">Back-End & Data Science</strong>[cite: 1]. Con un enfoque implacable en la lógica pura, la arquitectura de software avanzada y el modelamiento conceptual de datos[cite: 1].
+                
+                <div class="mt-4 min-h-[32px] flex justify-center md:justify-start">
+                    <span id="typewriter" class="text-zinc-200 text-lg sm:text-xl font-bold tracking-tight typewriter-cursor"></span>
+                </div>
+                
+                <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mt-2 font-sans leading-relaxed mx-auto md:mx-0">
+                    Especializado en la resolución de problemas mediante lógica pura, el diseño arquitectónico de software y el modelamiento avanzado de estructuras de datos.
                 </p>
                 
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <a href="#proyectos" class="bg-white text-black px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-lime-400 transition-colors duration-200 shadow-[4px_4px_0px_0px_rgba(163,230,53,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#proyectos" class="w-full sm:w-auto text-center bg-white text-black px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-lime-400 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(163,230,53,1)] btn-primary hover:shadow-none hover:translate-x-1 hover:translate-y-1">
                         [ Ver Proyectos ]
                     </a>
-                    <a href="#contacto" class="border border-zinc-700 text-zinc-300 px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-zinc-900 transition-colors">
+                    <a href="#contacto" class="w-full sm:w-auto text-center border border-zinc-700 text-zinc-300 px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-zinc-900 transition-colors">
                         Contacto.log()
                     </a>
                 </div>
@@ -53,25 +93,30 @@
         </div>
     </header>
 
-    <!-- 2. GRID DE PROYECTOS (ESTILO TARJETAS CYBERPUNK) -->
-    <main id="proyectos" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900">
-        <div class="flex justify-between items-center mb-12">
-            <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase">// PROYECTOS_DESTACADOS</h2>
-            <span class="text-xs text-zinc-600 hidden md:inline">SELECT * FROM REPOS</span>
+    <main id="proyectos" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+            <div>
+                <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase heading-tech">// PROYECTOS_DESTACADOS</h2>
+                <span class="text-xs text-zinc-600 font-mono">SELECT * FROM REPOS WHERE TYPE = <span id="query-filter-text">'ALL'</span></span>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs font-bold w-full md:w-auto">
+                <button data-filter="all" class="filter-btn flex-1 md:flex-none border-2 border-lime-400 bg-lime-400 text-black px-3 py-2 rounded uppercase transition-all cursor-pointer">All</button>
+                <button data-filter="backend" class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Back-end</button>
+                <button data-filter="datascience" class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Data Science</button>
+            </div>
         </div>
         
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Proyecto de Tesis: SubwayGO -->
-            <div class="bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+            <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="datascience">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
                 <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-bold text-lime-400 tracking-widest uppercase">TESIS DESPLEGADA</span>
-                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">SCORE: 6.4</span>
+                    <div class="flex justify-between items-center mb-4 gap-2">
+                        <span class="text-xs font-bold text-lime-400 tracking-widest uppercase label-tech">TESIS DE GRADO</span>
+                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded shrink-0">SCORE: 6.4</span>
                     </div>
-                    <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors">SubwayGO Santiago</h3>
+                    <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors card-title">SubwayGO Santiago</h3>
                     <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
-                        Optimización, planificación y modelamiento de datos críticos aplicados al transporte de Santiago[cite: 1]. Diseñado bajo patrones de arquitectura de software robustos[cite: 1].
+                        Sistema inteligente de optimización de rutas y análisis de flujo para el transporte urbano. Modelado lógico de datos masivos y diseño arquitectónico orientado al rendimiento técnico en entornos complejos.
                     </p>
                     <div class="mt-6 flex flex-wrap gap-2">
                         <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
@@ -80,46 +125,68 @@
                     </div>
                 </div>
                 <div class="mt-8 pt-4 border-t border-zinc-800/60">
-                    <a href="#" target="_blank" class="text-white hover:text-lime-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
+                    <a href="https://github.com/WalTvi/CAPSTONE_2025_EQUIPO_3" target="_blank" class="text-white hover:text-lime-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 link-tech">
                         READ_CASE_STUDY() <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Proyecto 2 (Customizable para Django/Firebase) -->
-            <div class="bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-violet-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+            <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-violet-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="backend">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-violet-400/5 blur-2xl rounded-full"></div>
                 <div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-bold text-violet-400 tracking-widest uppercase">BACK-END APP</span>
-                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">v1.0.0</span>
+                        <span class="text-xs font-bold text-violet-400 tracking-widest uppercase label-tech-alt">BACK-END CLOUD</span>
+                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">v1.2.4</span>
                     </div>
-                    <h3 class="text-2xl font-black text-white group-hover:text-violet-400 transition-colors">Custom Core System</h3>
+                    <h3 class="text-2xl font-black text-white group-hover:text-violet-400 transition-colors card-title">NexusStore API Core</h3>
                     <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
-                        Arquitectura backend integrada para la gestión de datos persistentes y servicios en tiempo real. Alta concurrencia y optimización lógica de consultas.
+                        Motor backend RESTful para la gestión y persistencia de inventarios a gran escala. Integración de Django REST Framework para la lógica de negocios y Firebase Cloud Storage/Firestore para sincronización asíncrona de archivos en tiempo real.
                     </p>
                     <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DJANGO</span>
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DJANGO REST</span>
                         <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">FIREBASE</span>
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">CLOUD_STORE</span>
                     </div>
                 </div>
                 <div class="mt-8 pt-4 border-t border-zinc-800/60">
-                    <a href="#" target="_blank" class="text-white hover:text-violet-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
-                        EXPLORE_CODE() <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
-                    </a>
+                    <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 cursor-not-allowed select-none">
+                        [ STATUS: ENCRYPTED_BY_CLIENT ]
+                    </span>
+                </div>
+            </div>
+
+            <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="datascience">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-bold text-lime-400 tracking-widest uppercase label-tech">DATA ANALYTICS</span>
+                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">MODELS</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors card-title">Predictive Health Analysis</h3>
+                    <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
+                        Pipeline de extracción y procesamiento de datos clínicos. Implementación de modelos conceptuales avanzados y algoritmos predictivos en Python para la optimización de recursos y Business Intelligence.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">BI_MODELS</span>
+                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DATA_PIPELINE</span>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-zinc-800/60">
+                    <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 cursor-not-allowed select-none">
+                        [ STATUS: ENCRYPTED_BY_CLIENT ]
+                    </span>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- 3. HABILIDADES: CORE STACK (VISUAL Y RADICAL) -->
-    <section class="bg-zinc-900/20 border-t border-b border-zinc-900 py-20">
+    <section class="bg-zinc-900/20 border-t border-b border-zinc-900 py-20 relative z-10">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase mb-12">// CORE_STACK</h2>
+            <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase mb-12 heading-tech">// CORE_STACK</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box">
                     <div class="w-8 h-8 rounded bg-lime-950 border border-lime-800 text-lime-400 font-bold text-center leading-7 mb-4 text-xs">LN</div>
                     <h3 class="text-lg font-bold text-white mb-4">Lenguajes</h3>
                     <div class="flex flex-wrap gap-2">
@@ -130,7 +197,7 @@
                     </div>
                 </div>
 
-                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950">
+                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box">
                     <div class="w-8 h-8 rounded bg-violet-950 border border-violet-800 text-violet-400 font-bold text-center leading-7 mb-4 text-xs">DT</div>
                     <h3 class="text-lg font-bold text-white mb-4">Datos & BI</h3>
                     <div class="flex flex-wrap gap-2">
@@ -140,7 +207,7 @@
                     </div>
                 </div>
 
-                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950">
+                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box col-span-1 sm:col-span-2 md:col-span-1">
                     <div class="w-8 h-8 rounded bg-emerald-950 border border-emerald-800 text-emerald-400 font-bold text-center leading-7 mb-4 text-xs">EN</div>
                     <h3 class="text-lg font-bold text-white mb-4">Ingeniería</h3>
                     <div class="flex flex-wrap gap-2">
@@ -153,43 +220,167 @@
         </div>
     </section>
 
-    <!-- 4. LOG DE EXPERIENCIA -->
-    <section class="max-w-5xl mx-auto px-6 py-20">
-        <h2 class="text-2xl font-black tracking-wider text-zinc-500 uppercase mb-12">// EXP_LOG</h2>
-        <div class="relative border-l-2 border-zinc-800 pl-6 ml-2">
-            <div class="relative">
-                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-zinc-950 border-2 border-lime-400"></div>
-                <span class="text-xs text-zinc-500 font-bold">AGOSTO 2025 - OCTUBRE 2025</span>
-                <h3 class="text-xl font-bold text-white mt-1">Soporte TI & Administración de Sistemas Clínicos</h3>
-                <h4 class="text-sm font-bold text-lime-400 uppercase mt-0.5">Hospital Naval Almirante Nef[cite: 1]</h4>
-                <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed max-w-2xl">
-                    Gestión crítica de infraestructura de red, mantenimiento avanzado de servidores e implementación de soporte técnico directo para sistemas de salud pública[cite: 1].
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. FOOTER / TERMINAL INVITATION -->
-    <footer id="contacto" class="border-t border-zinc-900 bg-black/60 backdrop-blur-md">
-        <div class="max-w-5xl mx-auto px-6 py-16 md:flex md:items-center md:justify-between">
+    <footer id="contacto" class="border-t border-zinc-900 bg-black/60 backdrop-blur-md relative z-10">
+        <div class="max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8 text-center md:text-left">
             <div>
-                <h2 class="text-3xl font-black text-white uppercase tracking-tight">EXECUTE_CONNECTION</h2>
-                <p class="text-xs text-zinc-500 mt-2 font-mono">Providencia, Santiago, Chile[cite: 1]. Disponible para proyectos globales.</p>
+                <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">EXECUTE_CONNECTION</h2>
+                <p class="text-xs text-zinc-500 mt-2 font-mono">Providencia, Santiago, Chile. Disponible para proyectos globales.</p>
             </div>
-            <div class="mt-8 md:mt-0 flex flex-wrap gap-4 items-center">
-                <a href="mailto:m.fdez.valdes@gmail.com" class="bg-lime-400 text-black px-4 py-2 text-xs font-black uppercase rounded hover:bg-white transition-colors">
+            <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-6 w-full md:w-auto">
+                <a href="mailto:m.fdez.valdes@gmail.com" class="w-full sm:w-auto text-center bg-lime-400 text-black px-4 py-2.5 text-xs font-black uppercase rounded hover:bg-white transition-colors btn-primary">
                     m.fdez.valdes@gmail.com
                 </a>
-                <div class="flex gap-4 text-xs font-bold text-zinc-400">
-                    <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="hover:text-white">[ LINKEDIN ]</a>
-                    <a href="https://github.com/tu-usuario" target="_blank" class="hover:text-white">[ GITHUB ]</a>
+                <div class="flex gap-6 text-xs font-bold text-zinc-400 justify-center">
+                    <a href="https://www.linkedin.com/in/matias-fernandez-valdes-bb9927251/" target="_blank" class="hover:text-white">[ LINKEDIN ]</a>
+                    <a href="https://github.com/WalTvi" target="_blank" class="hover:text-white">[ GITHUB ]</a>
                 </div>
             </div>
         </div>
-        <div class="text-center py-6 border-t border-zinc-900 text-[10px] text-zinc-600">
+        <div class="text-center py-6 border-t border-zinc-900 text-[10px] text-zinc-600 px-4">
             RUNNING ON TAILWIND v4 // RUN: CC_MFV_2026
         </div>
     </footer>
 
+
+    <script>
+        // --- 1. EASTER EGG EN LA CONSOLA ---
+        console.log(
+            "%c> ¡Hola, dev / reclutador! 🧠\n%cVeo que estás inspeccionando mi código. Si buscas optimización de datos y arquitectura limpia, estás en el lugar correcto. Hablemos en m.fdez.valdes@gmail.com", 
+            "color: #a3e635; font-size: 16px; font-weight: bold; font-family: monospace;",
+            "color: #ffffff; font-size: 13px; font-family: monospace;"
+        );
+
+        // --- 2. EFECTO TYPEWRITER (ESCRITURA) ---
+        const words = [
+            "Ingeniero en Informática.", 
+            "Especialista en Back-End.", 
+            "Apasionado por Data Science."
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById("typewriter");
+
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 100;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000; 
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500; 
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+        document.addEventListener("DOMContentLoaded", () => setTimeout(type, 1000));
+
+        // --- 3. FILTRO DE PROYECTOS EN TIEMPO REAL ---
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const projectCards = document.querySelectorAll(".project-card");
+        const queryText = document.getElementById("query-filter-text");
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                filterButtons.forEach(b => b.classList.remove("bg-lime-400", "text-black"));
+                filterButtons.forEach(b => b.classList.add("text-zinc-400", "border-zinc-800"));
+                btn.classList.remove("text-zinc-400", "border-zinc-800");
+                btn.classList.add("bg-lime-400", "text-black");
+
+                const filterValue = btn.getAttribute("data-filter");
+                queryText.textContent = `'${filterValue.toUpperCase()}'`;
+
+                projectCards.forEach(card => {
+                    if (filterValue === "all" || card.getAttribute("data-category") === filterValue) {
+                        card.style.display = "flex";
+                        setTimeout(() => card.style.opacity = "1", 10);
+                    } else {
+                        card.style.opacity = "0";
+                        setTimeout(() => card.style.display = "none", 300);
+                    }
+                });
+            });
+        });
+
+        // --- 4. CONFIGURACIÓN DEL FONDO DE NODOS (PARTICLES) ---
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 45, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#a3e635" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.2, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#a3e635", "opacity": 0.15, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false } },
+                "modes": { "grab": { "distance": 180, "line_linked": { "opacity": 0.35 } } }
+            },
+            "retina_detect": true
+        });
+
+        // --- 5. INTERRUPTOR DE MODO DE COLOR (MATRIX MODE) ---
+        const themeToggle = document.getElementById("theme-toggle");
+        let currentMode = "default";
+
+        themeToggle.addEventListener("click", () => {
+            if (currentMode === "default") {
+                document.body.classList.replace("bg-zinc-950", "bg-black");
+                document.querySelectorAll(".heading-tech, .label-tech").forEach(e => e.classList.replace("text-lime-400", "text-green-500"));
+                document.querySelectorAll(".btn-primary").forEach(e => e.classList.replace("bg-lime-400", "bg-green-500"));
+                
+                // Cambia el color del botón de WhatsApp a verde Matrix
+                document.querySelectorAll(".btn-whatsapp").forEach(e => {
+                    e.classList.replace("border-lime-400", "border-green-500");
+                    e.classList.replace("text-lime-400", "text-green-500");
+                    e.classList.replace("shadow-[4px_4px_0px_0px_rgba(163,230,53,1)]", "shadow-[4px_4px_0px_0px_rgba(34,197,94,1)]");
+                });
+                
+                if(window.pJSDom && window.pJSDom[0]) {
+                    window.pJSDom[0].pJS.particles.color.value = "#22c55e";
+                    window.pJSDom[0].pJS.particles.line_linked.color = "#22c55e";
+                    window.pJSDom[0].pJS.fn.particlesRefresh();
+                }
+
+                themeToggle.textContent = "[ MODE: MATRIX_FOSSIL ]";
+                themeToggle.classList.add("border-green-500", "text-green-500");
+                currentMode = "matrix";
+            } else {
+                document.body.classList.replace("bg-black", "bg-zinc-950");
+                document.querySelectorAll(".heading-tech, .label-tech").forEach(e => e.classList.replace("text-green-500", "text-lime-400"));
+                document.querySelectorAll(".btn-primary").forEach(e => e.classList.replace("bg-green-500", "bg-lime-400"));
+                
+                // Restaura el color del botón de WhatsApp al lime original
+                document.querySelectorAll(".btn-whatsapp").forEach(e => {
+                    e.classList.replace("border-green-500", "border-lime-400");
+                    e.classList.replace("text-green-500", "text-lime-400");
+                    e.classList.replace("shadow-[4px_4px_0px_0px_rgba(34,197,94,1)]", "shadow-[4px_4px_0px_0px_rgba(163,230,53,1)]");
+                });
+                
+                if(window.pJSDom && window.pJSDom[0]) {
+                    window.pJSDom[0].pJS.particles.color.value = "#a3e635";
+                    window.pJSDom[0].pJS.particles.line_linked.color = "#a3e635";
+                    window.pJSDom[0].pJS.fn.particlesRefresh();
+                }
+
+                themeToggle.textContent = "[ MODE: DEFAULT ]";
+                themeToggle.classList.remove("border-green-500", "text-green-500");
+                currentMode = "default";
+            }
+        });
+    </script>
 </body>
 </html>
