@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,16 @@
             content: '_';
             animation: blink 1s infinite;
         }
+
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
         }
+
         /* Contenedor del fondo interactivo */
         #particles-js {
             position: absolute;
@@ -28,25 +35,29 @@
         }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-50 font-mono antialiased selection:bg-lime-400 selection:text-black transition-colors duration-300">
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP BRUTALISTA -->
+<body
+    class="bg-zinc-950 text-zinc-50 font-mono antialiased selection:bg-lime-400 selection:text-black transition-colors duration-300">
+
     <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/56952521925?text=Hola%20Mat%C3%ADas,%20vi%20tu%20portafolio%20y%20me%20interesa%20tu%20perfil." 
-           target="_blank" 
-           class="block bg-zinc-900 border-2 border-lime-400 text-lime-400 font-mono text-xs font-black uppercase px-4 py-3 rounded-lg shadow-[4px_4px_0px_0px_rgba(163,230,53,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all btn-whatsapp">
+        <a href="https://wa.me/56952521925?text=Hola%20Mat%C3%ADas,%20vi%20tu%20portafolio%20y%20me%20interesa%20tu%20perfil."
+            target="_blank"
+            class="block bg-zinc-900 border-2 border-lime-400 text-lime-400 font-mono text-xs font-black uppercase px-4 py-3 rounded-lg shadow-[4px_4px_0px_0px_rgba(163,230,53,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all btn-whatsapp">
             [ PING: +56952521925 ]
         </a>
     </div>
 
     <div class="fixed top-14 right-4 z-50">
-        <button id="theme-toggle" class="bg-zinc-900 border border-zinc-700 text-zinc-400 text-xs px-3 py-1.5 rounded-md font-bold uppercase hover:border-lime-400 hover:text-white transition-all shadow-md cursor-pointer">
+        <button id="theme-toggle"
+            class="bg-zinc-900 border border-zinc-700 text-zinc-400 text-xs px-3 py-1.5 rounded-md font-bold uppercase hover:border-lime-400 hover:text-white transition-all shadow-md cursor-pointer">
             [ MODE: DEFAULT ]
         </button>
     </div>
 
-    <div class="bg-zinc-900 text-zinc-400 text-xs px-4 py-2 border-b border-zinc-800 flex justify-between items-center relative z-20">
-        <span class="tracking-tight overflow-hidden text-ellipsis whitespace-nowrap">STATUS: OPEN FOR OFFERS // LOCATION: SANTIAGO, CL</span>
+    <div
+        class="bg-zinc-900 text-zinc-400 text-xs px-4 py-2 border-b border-zinc-800 flex justify-between items-center relative z-20">
+        <span class="tracking-tight overflow-hidden text-ellipsis whitespace-nowrap">STATUS: OPEN FOR OFFERS //
+            LOCATION: SANTIAGO, CL</span>
         <span class="flex items-center gap-2 shrink-0">
             <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span> SYSTEM ONLINE
         </span>
@@ -54,38 +65,50 @@
 
     <header class="max-w-5xl mx-auto px-6 pt-20 pb-16 relative min-h-[60vh] flex items-center">
         <div id="particles-js"></div>
-        
-        <div class="absolute top-10 right-10 text-zinc-900 font-extrabold text-7xl md:text-8xl select-none pointer-events-none tracking-tighter z-0">
+
+        <div
+            class="absolute top-10 right-10 text-zinc-900 font-extrabold text-7xl md:text-8xl select-none pointer-events-none tracking-tighter z-0">
             010101
         </div>
-        
-        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10 w-full text-center md:text-left">
+
+        <div
+            class="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10 w-full text-center md:text-left">
             <div class="relative group shrink-0 mx-auto md:mx-0">
-                <div class="absolute inset-0 bg-lime-400 rounded-2xl translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
-                <img src="foto.png" alt="Matías Fernández" class="w-36 h-36 rounded-2xl object-cover border-2 border-zinc-50 relative z-10 filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300">
+                <div
+                    class="absolute inset-0 bg-lime-400 rounded-2xl translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform">
+                </div>
+                <img src="foto.png" alt="Matías Fernández"
+                    class="w-36 h-36 rounded-2xl object-cover border-2 border-zinc-50 relative z-10 filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300">
             </div>
 
             <div class="flex-1 w-full">
-                <span class="inline-block text-lime-400 font-bold tracking-widest text-xs uppercase bg-lime-950/50 px-2 py-1 rounded border border-lime-800/30 dynamic-tag">
+                <span
+                    class="inline-block text-lime-400 font-bold tracking-widest text-xs uppercase bg-lime-950/50 px-2 py-1 rounded border border-lime-800/30 dynamic-tag">
                     &gt;_ INGENIERO EN INFORMÁTICA
                 </span>
-                <h1 class="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-white mt-3 uppercase break-words">
-                    Matías Fernández <span class="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400 dynamic-gradient">Valdés</span>
+                <h1
+                    class="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-white mt-3 uppercase break-words">
+                    Matías Fernández <span
+                        class="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400 dynamic-gradient">Valdés</span>
                 </h1>
-                
+
                 <div class="mt-4 min-h-[32px] flex justify-center md:justify-start">
-                    <span id="typewriter" class="text-zinc-200 text-lg sm:text-xl font-bold tracking-tight typewriter-cursor"></span>
+                    <span id="typewriter"
+                        class="text-zinc-200 text-lg sm:text-xl font-bold tracking-tight typewriter-cursor"></span>
                 </div>
-                
+
                 <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mt-2 font-sans leading-relaxed mx-auto md:mx-0">
-                    Especializado en la resolución de problemas mediante lógica pura, el diseño arquitectónico de software y el modelamiento avanzado de estructuras de datos.
+                    Especializado en la resolución de problemas mediante lógica pura, el diseño arquitectónico de
+                    software y el modelamiento avanzado de estructuras de datos.
                 </p>
-                
+
                 <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="#proyectos" class="w-full sm:w-auto text-center bg-white text-black px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-lime-400 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(163,230,53,1)] btn-primary hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                    <a href="#proyectos"
+                        class="w-full sm:w-auto text-center bg-white text-black px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-lime-400 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(163,230,53,1)] btn-primary hover:shadow-none hover:translate-x-1 hover:translate-y-1">
                         [ Ver Proyectos ]
                     </a>
-                    <a href="#contacto" class="w-full sm:w-auto text-center border border-zinc-700 text-zinc-300 px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-zinc-900 transition-colors">
+                    <a href="#contacto"
+                        class="w-full sm:w-auto text-center border border-zinc-700 text-zinc-300 px-6 py-3 font-bold uppercase text-sm rounded-lg hover:bg-zinc-900 transition-colors">
                         Contacto.log()
                     </a>
                 </div>
@@ -96,25 +119,32 @@
     <main id="proyectos" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900 relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
             <div>
-                <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase heading-tech">// PROYECTOS_DESTACADOS</h2>
-                <span class="text-xs text-zinc-600 font-mono">SELECT * FROM REPOS WHERE TYPE = <span id="query-filter-text">'ALL'</span></span>
+                <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase heading-tech">//
+                    PROYECTOS_DESTACADOS</h2>
+                <span class="text-xs text-zinc-600 font-mono">SELECT * FROM REPOS WHERE TYPE = <span
+                        id="query-filter-text">'ALL'</span></span>
             </div>
             <div class="flex flex-wrap gap-2 text-xs font-bold w-full md:w-auto">
-                <button data-filter="all" class="filter-btn flex-1 md:flex-none border-2 border-lime-400 bg-lime-400 text-black px-3 py-2 rounded uppercase transition-all cursor-pointer">All</button>
-                <button data-filter="backend" class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Back-end</button>
-                <button data-filter="datascience" class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Data Science</button>
+                <button data-filter="all"
+                    class="filter-btn flex-1 md:flex-none border-2 border-lime-400 bg-lime-400 text-black px-3 py-2 rounded uppercase transition-all cursor-pointer">All</button>
+                <button data-filter="backend"
+                    class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Back-end</button>
+                <button data-filter="datascience"
+                    class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Data
+                    Science</button>
             </div>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
-            <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="datascience">
+
+        <div class="flex flex-col gap-y-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
+
+            <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="backend">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
                 <div>
                     <div class="flex justify-between items-center mb-4 gap-2">
-                        <span class="text-xs font-bold text-lime-400 tracking-widest uppercase label-tech">TESIS DE GRADO</span>
+                        <span class="text-xs font-bold text-lime-400 tracking-widest uppercase">TESIS DE GRADO</span>
                         <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded shrink-0">SCORE: 6.4</span>
                     </div>
-                    <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors card-title">SubwayGO Santiago</h3>
+                    <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors">SubwayGO Santiago</h3>
                     <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
                         Sistema inteligente de optimización de rutas y análisis de flujo para el transporte urbano. Modelado lógico de datos masivos y diseño arquitectónico orientado al rendimiento técnico en entornos complejos.
                     </p>
@@ -125,7 +155,8 @@
                     </div>
                 </div>
                 <div class="mt-8 pt-4 border-t border-zinc-800/60">
-                    <a href="https://github.com/WalTvi/CAPSTONE_2025_EQUIPO_3" target="_blank" class="text-white hover:text-lime-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 link-tech">
+                    <a href="https://github.com/WalTvi/CAPSTONE_2025_EQUIPO_3" target="_blank"
+                        class="text-white group-hover:text-lime-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 after:absolute after:inset-0 after:z-10">
                         READ_CASE_STUDY() <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
                     </a>
                 </div>
@@ -167,9 +198,9 @@
                         Pipeline de extracción y procesamiento de datos clínicos. Implementación de modelos conceptuales avanzados y algoritmos predictivos en Python para la optimización de recursos y Business Intelligence.
                     </p>
                     <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">BI_MODELS</span>
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DATA_PIPELINE</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">BI_MODELS</span>
+                        <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DATA_PIPELINE</span>
                     </div>
                 </div>
                 <div class="mt-8 pt-4 border-t border-zinc-800/60">
@@ -178,13 +209,14 @@
                     </span>
                 </div>
             </div>
+
         </div>
     </main>
 
     <section class="bg-zinc-900/20 border-t border-b border-zinc-900 py-20 relative z-10">
         <div class="max-w-5xl mx-auto px-6">
             <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase mb-12 heading-tech">// CORE_STACK</h2>
-            
+
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box">
                     <div class="w-8 h-8 rounded bg-lime-950 border border-lime-800 text-lime-400 font-bold text-center leading-7 mb-4 text-xs">LN</div>
@@ -227,11 +259,13 @@
                 <p class="text-xs text-zinc-500 mt-2 font-mono">Providencia, Santiago, Chile. Disponible para proyectos globales.</p>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-6 w-full md:w-auto">
-                <a href="mailto:m.fdez.valdes@gmail.com" class="w-full sm:w-auto text-center bg-lime-400 text-black px-4 py-2.5 text-xs font-black uppercase rounded hover:bg-white transition-colors btn-primary">
+                <a href="mailto:m.fdez.valdes@gmail.com"
+                    class="w-full sm:w-auto text-center bg-lime-400 text-black px-4 py-2.5 text-xs font-black uppercase rounded hover:bg-white transition-colors btn-primary">
                     m.fdez.valdes@gmail.com
                 </a>
                 <div class="flex gap-6 text-xs font-bold text-zinc-400 justify-center">
-                    <a href="https://www.linkedin.com/in/matias-fernandez-valdes-bb9927251/" target="_blank" class="hover:text-white">[ LINKEDIN ]</a>
+                    <a href="https://www.linkedin.com/in/matias-fernandez-valdes-bb9927251/" target="_blank"
+                        class="hover:text-white">[ LINKEDIN ]</a>
                     <a href="https://github.com/WalTvi" target="_blank" class="hover:text-white">[ GITHUB ]</a>
                 </div>
             </div>
@@ -239,21 +273,21 @@
         <div class="text-center py-6 border-t border-zinc-900 text-[10px] text-zinc-600 px-4">
             RUNNING ON TAILWIND v4 // RUN: CC_MFV_2026
         </div>
-    </footer>
+    </header>
 
 
     <script>
         // --- 1. EASTER EGG EN LA CONSOLA ---
         console.log(
-            "%c> ¡Hola, dev / reclutador! 🧠\n%cVeo que estás inspeccionando mi código. Si buscas optimización de datos y arquitectura limpia, estás en el lugar correcto. Hablemos en m.fdez.valdes@gmail.com", 
+            "%c> ¡Hola, dev / reclutador! 🧠\n%cVeo que estás inspeccionando mi código. Si buscas optimización de datos y arquitectura limpia, estás en el lugar correcto. Hablemos en m.fdez.valdes@gmail.com",
             "color: #a3e635; font-size: 16px; font-weight: bold; font-family: monospace;",
             "color: #ffffff; font-size: 13px; font-family: monospace;"
         );
 
         // --- 2. EFECTO TYPEWRITER (ESCRITURA) ---
         const words = [
-            "Ingeniero en Informática.", 
-            "Especialista en Back-End.", 
+            "Ingeniero en Informática.",
+            "Especialista en Back-End.",
             "Apasionado por Data Science."
         ];
         let wordIndex = 0;
@@ -274,12 +308,12 @@
             let typeSpeed = isDeleting ? 40 : 100;
 
             if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; 
+                typeSpeed = 2000;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500; 
+                typeSpeed = 500;
             }
 
             setTimeout(type, typeSpeed);
@@ -341,15 +375,15 @@
                 document.body.classList.replace("bg-zinc-950", "bg-black");
                 document.querySelectorAll(".heading-tech, .label-tech").forEach(e => e.classList.replace("text-lime-400", "text-green-500"));
                 document.querySelectorAll(".btn-primary").forEach(e => e.classList.replace("bg-lime-400", "bg-green-500"));
-                
+
                 // Cambia el color del botón de WhatsApp a verde Matrix
                 document.querySelectorAll(".btn-whatsapp").forEach(e => {
                     e.classList.replace("border-lime-400", "border-green-500");
                     e.classList.replace("text-lime-400", "text-green-500");
                     e.classList.replace("shadow-[4px_4px_0px_0px_rgba(163,230,53,1)]", "shadow-[4px_4px_0px_0px_rgba(34,197,94,1)]");
                 });
-                
-                if(window.pJSDom && window.pJSDom[0]) {
+
+                if (window.pJSDom && window.pJSDom[0]) {
                     window.pJSDom[0].pJS.particles.color.value = "#22c55e";
                     window.pJSDom[0].pJS.particles.line_linked.color = "#22c55e";
                     window.pJSDom[0].pJS.fn.particlesRefresh();
@@ -362,15 +396,15 @@
                 document.body.classList.replace("bg-black", "bg-zinc-950");
                 document.querySelectorAll(".heading-tech, .label-tech").forEach(e => e.classList.replace("text-green-500", "text-lime-400"));
                 document.querySelectorAll(".btn-primary").forEach(e => e.classList.replace("bg-green-500", "bg-lime-400"));
-                
+
                 // Restaura el color del botón de WhatsApp al lime original
                 document.querySelectorAll(".btn-whatsapp").forEach(e => {
                     e.classList.replace("border-green-500", "border-lime-400");
                     e.classList.replace("text-green-500", "text-lime-400");
                     e.classList.replace("shadow-[4px_4px_0px_0px_rgba(34,197,94,1)]", "shadow-[4px_4px_0px_0px_rgba(163,230,53,1)]");
                 });
-                
-                if(window.pJSDom && window.pJSDom[0]) {
+
+                if (window.pJSDom && window.pJSDom[0]) {
                     window.pJSDom[0].pJS.particles.color.value = "#a3e635";
                     window.pJSDom[0].pJS.particles.line_linked.color = "#a3e635";
                     window.pJSDom[0].pJS.fn.particlesRefresh();
@@ -383,4 +417,5 @@
         });
     </script>
 </body>
+
 </html>
