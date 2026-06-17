@@ -2,6 +2,7 @@
 <html lang="es" class="scroll-smooth">
 
 <head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='black'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='80' fill='%23a3e635'>&gt;_</text></svg>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matías Fernández | Portafolio</title>
@@ -15,9 +16,12 @@
         }
 
         @keyframes blink {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
             }
+
             50% {
                 opacity: 0;
             }
@@ -32,6 +36,16 @@
             left: 0;
             z-index: 1;
             pointer-events: none;
+        }
+
+        /* Ocultar barra de scroll en la terminal */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
@@ -84,7 +98,7 @@
             <div class="flex-1 w-full">
                 <span
                     class="inline-block text-lime-400 font-bold tracking-widest text-xs uppercase bg-lime-950/50 px-2 py-1 rounded border border-lime-800/30 dynamic-tag">
-                    &gt;_ INGENIERO EN INFORMÁTICA
+                    &gt;_ INGENIERO DE SOFTWARE / BACK-END
                 </span>
                 <h1
                     class="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-white mt-3 uppercase break-words">
@@ -98,8 +112,8 @@
                 </div>
 
                 <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mt-2 font-sans leading-relaxed mx-auto md:mx-0">
-                    Especializado en la resolución de problemas mediante lógica pura, el diseño arquitectónico de
-                    software y el modelamiento avanzado de estructuras de datos.
+                    Especializado en el desarrollo Back-end, resolución de problemas mediante lógica pura, diseño
+                    arquitectónico de software y modelamiento avanzado de estructuras de datos.
                 </p>
 
                 <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
@@ -117,178 +131,337 @@
     </header>
 
     <main id="proyectos" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900 relative z-10">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+        <div>
+            <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase heading-tech">// PROYECTOS_DESTACADOS</h2>
+            <span class="text-xs text-zinc-600 font-mono">SELECT * FROM REPOS WHERE TYPE = <span id="query-filter-text">'ALL'</span></span>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs font-bold w-full md:w-auto">
+            <button data-filter="all" class="filter-btn flex-1 md:flex-none border-2 border-lime-400 bg-lime-400 text-black px-3 py-2 rounded uppercase transition-all cursor-pointer">All</button>
+            <button data-filter="backend" class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Back-end</button>
+            <button data-filter="datascience" class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Data Science</button>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-y-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
+
+        <!-- PROYECTO 1: SubwayGO Santiago -->
+        <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="backend">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
             <div>
-                <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase heading-tech">//
-                    PROYECTOS_DESTACADOS</h2>
-                <span class="text-xs text-zinc-600 font-mono">SELECT * FROM REPOS WHERE TYPE = <span
-                        id="query-filter-text">'ALL'</span></span>
+                <div class="flex justify-between items-center mb-4 gap-2">
+                    <span class="text-xs font-bold text-lime-400 tracking-widest uppercase">SYSTEM ARCHITECTURE</span>
+                    <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded shrink-0">CAPSTONE</span>
+                </div>
+                <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors">SubwayGO Santiago</h3>
+                <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
+                    Sistema inteligente de optimización de rutas y análisis de flujo para el transporte urbano. Modelado lógico de datos masivos y diseño arquitectónico orientado al rendimiento técnico en entornos complejos.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DATA MODELING</span>
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">ARCHITECTURE</span>
+                </div>
             </div>
-            <div class="flex flex-wrap gap-2 text-xs font-bold w-full md:w-auto">
-                <button data-filter="all"
-                    class="filter-btn flex-1 md:flex-none border-2 border-lime-400 bg-lime-400 text-black px-3 py-2 rounded uppercase transition-all cursor-pointer">All</button>
-                <button data-filter="backend"
-                    class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Back-end</button>
-                <button data-filter="datascience"
-                    class="filter-btn flex-1 md:flex-none border-2 border-zinc-800 text-zinc-400 px-3 py-2 rounded uppercase hover:border-zinc-500 transition-all cursor-pointer">Data
-                    Science</button>
+            <div class="mt-8 pt-4 border-t border-zinc-800/60">
+                <a href="https://github.com/matiasfdezv/CAPSTONE_2025_EQUIPO_3" target="_blank" class="text-white group-hover:text-lime-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 after:absolute after:inset-0 after:z-10">
+                    READ_CASE_STUDY() <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </a>
             </div>
         </div>
 
-        <div class="flex flex-col gap-y-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
-
-            <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="backend">
-                <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
-                <div>
-                    <div class="flex justify-between items-center mb-4 gap-2">
-                        <span class="text-xs font-bold text-lime-400 tracking-widest uppercase">TESIS DE GRADO</span>
-                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded shrink-0">SCORE: 6.4</span>
-                    </div>
-                    <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors">SubwayGO Santiago</h3>
-                    <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
-                        Sistema inteligente de optimización de rutas y análisis de flujo para el transporte urbano. Modelado lógico de datos masivos y diseño arquitectónico orientado al rendimiento técnico en entornos complejos.
-                    </p>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DATA MODELING</span>
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">ARCHITECTURE</span>
-                    </div>
+        <!-- PROYECTO 2: Kent Foods (Corregido a datascience) -->
+        <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="datascience">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
+            <div>
+                <div class="flex justify-between items-center mb-4 gap-2">
+                    <span class="text-xs font-bold text-lime-400 tracking-widest uppercase">DATA ENGINEERING / BI</span>
+                    <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded shrink-0">END-TO-END</span>
                 </div>
-                <div class="mt-8 pt-4 border-t border-zinc-800/60">
-                    <a href="https://github.com/WalTvi/CAPSTONE_2025_EQUIPO_3" target="_blank"
-                        class="text-white group-hover:text-lime-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 after:absolute after:inset-0 after:z-10">
-                        READ_CASE_STUDY() <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
-                    </a>
+                <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors">Kent Foods BI Solution</h3>
+                <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
+                    Plataforma analítica corporativa que transforma un entorno transaccional (OLTP) a un Data Warehouse (OLAP) optimizado. Implementa modelado multidimensional bajo metodología Kimball, flujos de integración ETL y dashboards interactivos para la auditoría de KPIs comerciales logísticos y de ventas.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">SQL SERVER</span>
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">POWER BI</span>
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">ETL / KIMBALL</span>
                 </div>
             </div>
-
-            <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-violet-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="backend">
-                <div class="absolute top-0 right-0 w-24 h-24 bg-violet-400/5 blur-2xl rounded-full"></div>
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-bold text-violet-400 tracking-widest uppercase label-tech-alt">BACK-END CLOUD</span>
-                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">v1.2.4</span>
-                    </div>
-                    <h3 class="text-2xl font-black text-white group-hover:text-violet-400 transition-colors card-title">NexusStore API Core</h3>
-                    <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
-                        Motor backend RESTful para la gestión y persistencia de inventarios a gran escala. Integración de Django REST Framework para la lógica de negocios y Firebase Cloud Storage/Firestore para sincronización asíncrona de archivos en tiempo real.
-                    </p>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DJANGO REST</span>
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">FIREBASE</span>
-                        <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">CLOUD_STORE</span>
-                    </div>
-                </div>
-                <div class="mt-8 pt-4 border-t border-zinc-800/60">
-                    <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 cursor-not-allowed select-none">
-                        [ STATUS: ENCRYPTED_BY_CLIENT ]
-                    </span>
-                </div>
+            <div class="mt-8 pt-4 border-t border-zinc-800/60">
+                <a href="https://github.com/matiasfdezv/kentfoods-bi-data-warehouse" target="_blank" class="text-white group-hover:text-lime-400 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 after:absolute after:inset-0 after:z-10">
+                    READ_CASE_STUDY() <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </a>
             </div>
-
-            <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="datascience">
-                <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-bold text-lime-400 tracking-widest uppercase label-tech">DATA ANALYTICS</span>
-                        <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">MODELS</span>
-                    </div>
-                    <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors card-title">Predictive Health Analysis</h3>
-                    <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
-                        Pipeline de extracción y procesamiento de datos clínicos. Implementación de modelos conceptuales avanzados y algoritmos predictivos en Python para la optimización de recursos y Business Intelligence.
-                    </p>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">BI_MODELS</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DATA_PIPELINE</span>
-                    </div>
-                </div>
-                <div class="mt-8 pt-4 border-t border-zinc-800/60">
-                    <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 cursor-not-allowed select-none">
-                        [ STATUS: ENCRYPTED_BY_CLIENT ]
-                    </span>
-                </div>
-            </div>
-
         </div>
-    </main>
+
+        <!-- PROYECTO 3: NexusStore API Core -->
+        <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-violet-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="backend">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-violet-400/5 blur-2xl rounded-full"></div>
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-xs font-bold text-violet-400 tracking-widest uppercase label-tech-alt">BACK-END CLOUD</span>
+                    <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">v1.2.4</span>
+                </div>
+                <h3 class="text-2xl font-black text-white group-hover:text-violet-400 transition-colors card-title">NexusStore API Core</h3>
+                <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
+                    Motor backend RESTful para la gestión y persistencia de inventarios a gran escala. Integración de Django REST Framework para la lógica de negocios y Firebase Cloud Storage/Firestore para sincronización asíncrona de archivos en tiempo real.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DJANGO REST</span>
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">FIREBASE</span>
+                    <span class="bg-zinc-900 text-zinc-400 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">CLOUD_STORE</span>
+                </div>
+            </div>
+            <div class="mt-8 pt-4 border-t border-zinc-800/60">
+                <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 cursor-not-allowed select-none">
+                    [ STATUS: ENCRYPTED_BY_CLIENT ]
+                </span>
+            </div>
+        </div>
+
+        <!-- PROYECTO 4: Predictive Health Analysis -->
+        <div class="project-card bg-zinc-900/40 border border-zinc-800 rounded-xl p-6 hover:border-lime-400/50 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden" data-category="datascience">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 blur-2xl rounded-full"></div>
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-xs font-bold text-lime-400 tracking-widest uppercase label-tech">DATA ANALYTICS</span>
+                    <span class="text-xs text-zinc-500 font-bold border border-zinc-800 px-2 py-0.5 rounded">MODELS</span>
+                </div>
+                <h3 class="text-2xl font-black text-white group-hover:text-lime-400 transition-colors card-title">Predictive Health Analysis</h3>
+                <p class="mt-3 text-zinc-400 font-sans text-sm leading-relaxed">
+                    Pipeline de extracción y procesamiento de datos clínicos. Implementación de modelos conceptuales avanzados y algoritmos predictivos en Python para la optimización de recursos y Business Intelligence.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">PYTHON</span>
+                    <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">BI_MODELS</span>
+                    <span class="bg-zinc-900 text-zinc-300 text-xs px-2.5 py-1 rounded font-bold border border-zinc-800">DATA_PIPELINE</span>
+                </div>
+            </div>
+            <div class="mt-8 pt-4 border-t border-zinc-800/60">
+                <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 cursor-not-allowed select-none">
+                    [ STATUS: ENCRYPTED_BY_CLIENT ]
+                </span>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+    <!-- NUEVA SECCIÓN: Educación e Historial estructurada como endpoint de API -->
+    <section class="max-w-5xl mx-auto px-6 py-12 border-t border-zinc-900 relative z-10">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-xl p-6 overflow-hidden relative">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-4 mb-6">
+                <div class="flex items-center gap-2">
+                    <span
+                        class="bg-emerald-500/10 text-emerald-400 text-xs px-2 py-1 rounded font-bold border border-emerald-800/30 font-mono">GET</span>
+                    <span class="text-sm font-bold text-zinc-300 font-mono">/v1/academic/degree</span>
+                </div>
+                <span class="text-xs text-zinc-600 font-mono hidden sm:inline">STATUS: 200 OK</span>
+            </div>
+            <div class="font-mono text-sm leading-relaxed text-zinc-400">
+                <span class="text-zinc-600">// Historial Académico Oficial</span><br>
+                {<br>
+                &nbsp;&nbsp;"institution": <span class="text-lime-400">"DUOC UC"</span>,<br>
+                &nbsp;&nbsp;"degree": <span class="text-zinc-200">"Ingeniería en Informática / Computación"</span>,<br>
+                &nbsp;&nbsp;"specialization": <span class="text-zinc-200">"Diseño Arquitectónico, Lógica de Datos y
+                    Sistemas Back-End"</span>,<br>
+                &nbsp;&nbsp;"status": <span class="text-amber-400">"Graduado"</span><br>
+                }
+            </div>
+        </div>
+    </section>
 
     <section class="bg-zinc-900/20 border-t border-b border-zinc-900 py-20 relative z-10">
         <div class="max-w-5xl mx-auto px-6">
             <h2 class="text-2xl font-black tracking-wider text-lime-400 uppercase mb-12 heading-tech">// CORE_STACK</h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Lenguajes -->
                 <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box">
-                    <div class="w-8 h-8 rounded bg-lime-950 border border-lime-800 text-lime-400 font-bold text-center leading-7 mb-4 text-xs">LN</div>
+                    <div
+                        class="w-8 h-8 rounded bg-lime-950 border border-lime-800 text-lime-400 font-bold text-center leading-7 mb-4 text-xs">
+                        LN</div>
                     <h3 class="text-lg font-bold text-white mb-4">Lenguajes</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Python</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Java</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">C++</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">JavaScript</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Python</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">SQL</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Java</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">C++</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">JavaScript</span>
                     </div>
                 </div>
 
+                <!-- Datos & BI -->
                 <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box">
-                    <div class="w-8 h-8 rounded bg-violet-950 border border-violet-800 text-violet-400 font-bold text-center leading-7 mb-4 text-xs">DT</div>
+                    <div
+                        class="w-8 h-8 rounded bg-violet-950 border border-violet-800 text-violet-400 font-bold text-center leading-7 mb-4 text-xs">
+                        DT</div>
                     <h3 class="text-lg font-bold text-white mb-4">Datos & BI</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Modelamiento Lógico</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Diseño Conceptual</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Business Intelligence</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Modelamiento
+                            Lógico</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">PostgreSQL
+                            / MySQL</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">ETL
+                            Pipelines</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Diseño
+                            Conceptual</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Power
+                            BI</span>
                     </div>
                 </div>
 
-                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box col-span-1 sm:col-span-2 md:col-span-1">
-                    <div class="w-8 h-8 rounded bg-emerald-950 border border-emerald-800 text-emerald-400 font-bold text-center leading-7 mb-4 text-xs">EN</div>
+                <!-- Ingeniería -->
+                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box">
+                    <div
+                        class="w-8 h-8 rounded bg-emerald-950 border border-emerald-800 text-emerald-400 font-bold text-center leading-7 mb-4 text-xs">
+                        EN</div>
                     <h3 class="text-lg font-bold text-white mb-4">Ingeniería</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Arquitectura Software</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Análisis Requerimientos</span>
-                        <span class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Calidad & QA</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Arquitectura
+                            Software</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">RESTful
+                            APIs</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Git
+                            / GitHub</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Docker</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Calidad
+                            & QA</span>
+                    </div>
+                </div>
+
+                <!-- Human_Protocols -->
+                <div class="border border-zinc-800 p-6 rounded-xl bg-zinc-950 skill-box">
+                    <div
+                        class="w-8 h-8 rounded bg-amber-950 border border-amber-800 text-amber-400 font-bold text-center leading-7 mb-4 text-xs label-soft">
+                        HP</div>
+                    <h3 class="text-lg font-bold text-white mb-4">Habilidades Personales</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Documentación
+                            Técnica</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Code
+                            Review (Feedback)</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Comunicación
+                            Asíncrona</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Resolución
+                            de Problemas</span>
+                        <span
+                            class="bg-zinc-900 text-zinc-300 text-xs px-3 py-1.5 rounded-md border border-zinc-800 font-bold">Metodologías
+                            Ágiles</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contacto" class="border-t border-zinc-900 bg-black/60 backdrop-blur-md relative z-10">
-        <div class="max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8 text-center md:text-left">
+    <!-- NUEVA SECCIÓN: Terminal de Comandos Interactiva -->
+    <section class="max-w-5xl mx-auto px-6 py-12 relative z-10">
+        <h2 class="text-xl font-black tracking-wider text-zinc-400 uppercase mb-4 font-mono">&gt;_ TERMINAL_CORE</h2>
+        <div class="bg-black border border-zinc-800 rounded-xl overflow-hidden shadow-2xl">
+            <div
+                class="bg-zinc-900 px-4 py-2 border-b border-zinc-800 flex items-center justify-between text-xs text-zinc-500">
+                <span>sh - matias@core-system</span>
+                <div class="flex gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-zinc-800"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
+                </div>
+            </div>
+            <div id="terminal-body"
+                class="p-4 font-mono text-xs h-48 overflow-y-auto text-zinc-300 space-y-1.5 no-scrollbar">
+                <div>Escribe <span class="text-lime-400 font-bold">help</span> para listar los comandos de sistema
+                    disponibles.</div>
+            </div>
+            <div class="p-4 pt-0 border-t border-zinc-900 flex items-center bg-black">
+                <span class="text-lime-400 font-bold mr-2 text-xs font-mono">guest@matias:~$</span>
+                <input id="terminal-input" type="text"
+                    class="bg-transparent text-white font-mono text-xs focus:outline-none flex-1" autocomplete="off">
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTADO DEL SISTEMA -->
+    <div
+        class="max-w-5xl mx-auto px-6 py-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-[10px] font-mono text-zinc-600 uppercase tracking-wider relative z-10">
+        <span>[ CPU: OPTIMIZED ]</span>
+        <span>[ UPTIME: 99.98% ]</span>
+        <span>[ ENVIRONMENT: PRODUCTION ]</span>
+        <span>[ HOT_RELOAD: ACTIVE ]</span>
+    </div>
+
+<footer id="contacto" class="border-t border-zinc-900 bg-black/60 backdrop-blur-md relative z-10">
+    <div class="max-w-5xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8 text-center md:text-left mb-12">
             <div>
                 <h2 class="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">EXECUTE_CONNECTION</h2>
-                <p class="text-xs text-zinc-500 mt-2 font-mono">Providencia, Santiago, Chile. Disponible para proyectos globales.</p>
+                <p class="text-xs text-zinc-500 mt-2 font-mono">DISPONIBILIDAD: PROVIDENCIA, SANTIAGO, CHILE (HÍBRIDO / REMOTO)</p>
             </div>
-            <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-6 w-full md:w-auto">
+
+            <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-4 w-full md:w-auto">
                 <a href="mailto:m.fdez.valdes@gmail.com"
                     class="w-full sm:w-auto text-center bg-lime-400 text-black px-4 py-2.5 text-xs font-black uppercase rounded hover:bg-white transition-colors btn-primary">
                     m.fdez.valdes@gmail.com
                 </a>
-                <div class="flex gap-6 text-xs font-bold text-zinc-400 justify-center">
-                    <a href="https://www.linkedin.com/in/matias-fernandez-valdes-bb9927251/" target="_blank"
-                        class="hover:text-white">[ LINKEDIN ]</a>
-                    <a href="https://github.com/WalTvi" target="_blank" class="hover:text-white">[ GITHUB ]</a>
-                </div>
+                <a href="MatíasFernándezValdés.pdf" download="CV_Matias_Fernandez.pdf"
+                    class="w-full sm:w-auto text-center border border-zinc-700 hover:border-lime-400 text-zinc-300 hover:text-white px-4 py-2.5 text-xs font-bold uppercase rounded transition-colors">
+                    [ DOWNLOAD_CV.pdf ↓ ]
+                </a>
             </div>
         </div>
-        <div class="text-center py-6 border-t border-zinc-900 text-[10px] text-zinc-600 px-4">
-            RUNNING ON TAILWIND v4 // RUN: CC_MFV_2026
+
+        <div class="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-xs">
+            <div class="text-zinc-600 flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1">
+                <span>[ REPO_STATUS: PUBLIC ]</span>
+                <span>[ ENGINE: VERCEL_EDGE ]</span>
+                <span>[ LICENSE: MIT ]</span>
+            </div>
+
+            <div class="flex gap-6 font-bold justify-center">
+                <a href="https://www.linkedin.com/in/matias-fernandez-valdes-bb9927251/" target="_blank"
+                    class="text-lime-400 hover:text-white transition-colors">[ LINKEDIN ]</a>
+                <a href="https://github.com/matiasfdezv" target="_blank" 
+                    class="text-lime-400 hover:text-white transition-colors">[ GITHUB ]</a>
+            </div>
         </div>
-    </header>
+    </div>
+
+    <div class="text-center py-6 border-t border-zinc-900 text-[10px] text-zinc-600 px-4">
+        RUNNING ON TAILWIND v4 // RUN: CC_MFV_2026 // v1.0.0
+    </div>
+</footer>
 
 
     <script>
-        // --- 1. EASTER EGG EN LA CONSOLA ---
         console.log(
             "%c> ¡Hola, dev / reclutador! 🧠\n%cVeo que estás inspeccionando mi código. Si buscas optimización de datos y arquitectura limpia, estás en el lugar correcto. Hablemos en m.fdez.valdes@gmail.com",
             "color: #a3e635; font-size: 16px; font-weight: bold; font-family: monospace;",
             "color: #ffffff; font-size: 13px; font-family: monospace;"
         );
 
-        // --- 2. EFECTO TYPEWRITER (ESCRITURA) ---
         const words = [
-            "Ingeniero en Informática.",
-            "Especialista en Back-End.",
-            "Apasionado por Data Science."
+            "Ingeniero de Software Back-End.",
+            "Especialista en Lógica y Datos.",
+            "Apasionado por la Arquitectura de Software."
         ];
         let wordIndex = 0;
         let charIndex = 0;
@@ -320,7 +493,6 @@
         }
         document.addEventListener("DOMContentLoaded", () => setTimeout(type, 1000));
 
-        // --- 3. FILTRO DE PROYECTOS EN TIEMPO REAL ---
         const filterButtons = document.querySelectorAll(".filter-btn");
         const projectCards = document.querySelectorAll(".project-card");
         const queryText = document.getElementById("query-filter-text");
@@ -347,7 +519,48 @@
             });
         });
 
-        // --- 4. CONFIGURACIÓN DEL FONDO DE NODOS (PARTICLES) ---
+        // SCRIPT DE LA TERMINAL DE COMANDOS
+        const terminalInput = document.getElementById("terminal-input");
+        const terminalBody = document.getElementById("terminal-body");
+
+        terminalInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                const input = terminalInput.value.trim().toLowerCase();
+                if (input === "") return;
+
+                // Crear línea de comando ingresada
+                const cmdLine = document.createElement("div");
+                cmdLine.innerHTML = `<span class="text-zinc-500">guest@matias:~$</span> ${terminalInput.value}`;
+                terminalBody.appendChild(cmdLine);
+
+                // Evaluar comando
+                const outputLine = document.createElement("div");
+                outputLine.classList.add("pl-2", "text-zinc-400");
+
+                switch (input) {
+                    case "help":
+                        outputLine.innerHTML = "Comandos válidos: <br> <span class='text-lime-400'>about</span> - Resumen del perfil<br> <span class='text-lime-400'>projects</span> - Ver proyectos activos<br> <span class='text-lime-400'>clear</span> - Limpiar consola";
+                        break;
+                    case "about":
+                        outputLine.innerHTML = "Matías Fernández: Ingeniero de Software enfocado en lógicas complejas Back-end y modelado relacional.";
+                        break;
+                    case "projects":
+                        outputLine.innerHTML = "Repositorios detectados: [SubwayGO Santiago], [NexusStore API Core], [Predictive Health Analysis].";
+                        break;
+                    case "clear":
+                        terminalBody.innerHTML = "";
+                        terminalInput.value = "";
+                        return;
+                    default:
+                        outputLine.innerHTML = `command not found: ${input}. Intenta escribiendo 'help'.`;
+                }
+
+                terminalBody.appendChild(outputLine);
+                terminalInput.value = "";
+                terminalBody.scrollTop = terminalBody.scrollHeight;
+            }
+        });
+
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 45, "density": { "enable": true, "value_area": 800 } },
@@ -366,7 +579,6 @@
             "retina_detect": true
         });
 
-        // --- 5. INTERRUPTOR DE MODO DE COLOR (MATRIX MODE) ---
         const themeToggle = document.getElementById("theme-toggle");
         let currentMode = "default";
 
@@ -376,7 +588,13 @@
                 document.querySelectorAll(".heading-tech, .label-tech").forEach(e => e.classList.replace("text-lime-400", "text-green-500"));
                 document.querySelectorAll(".btn-primary").forEach(e => e.classList.replace("bg-lime-400", "bg-green-500"));
 
-                // Cambia el color del botón de WhatsApp a verde Matrix
+                // Soporte Matrix Mode para el bloque de Soft Skills (HP)
+                document.querySelectorAll(".label-soft").forEach(e => {
+                    e.classList.replace("bg-amber-950", "bg-green-950/40");
+                    e.classList.replace("border-amber-800", "border-green-800");
+                    e.classList.replace("text-amber-400", "text-green-500");
+                });
+
                 document.querySelectorAll(".btn-whatsapp").forEach(e => {
                     e.classList.replace("border-lime-400", "border-green-500");
                     e.classList.replace("text-lime-400", "text-green-500");
@@ -397,7 +615,12 @@
                 document.querySelectorAll(".heading-tech, .label-tech").forEach(e => e.classList.replace("text-green-500", "text-lime-400"));
                 document.querySelectorAll(".btn-primary").forEach(e => e.classList.replace("bg-green-500", "bg-lime-400"));
 
-                // Restaura el color del botón de WhatsApp al lime original
+                // Restaurar Soft Skills (HP) al modo original (Ámbar)
+                document.querySelectorAll(".label-soft").forEach(e => {
+                    e.classList.add("bg-amber-950", "border-amber-800", "text-amber-400");
+                    e.classList.remove("bg-green-950/40", "border-green-800", "text-green-500");
+                });
+
                 document.querySelectorAll(".btn-whatsapp").forEach(e => {
                     e.classList.replace("border-green-500", "border-lime-400");
                     e.classList.replace("text-green-500", "text-lime-400");
